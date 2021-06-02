@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    background-color: hsl(213, 44%, 95%);
+    padding: 10px;
+    height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+
+/* Element
+====================*/
+.element {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 730px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.element__inner {
+    display: flex;
+}
+
+.element__img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px 0 0 15px;
+}
+
+.element__content {
+    margin-left: -60px;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.element__title {
+    color: hsl(217, 19%, 35%);
+}
+
+.element__text {
+    color: hsl(214, 17%, 51%);
+    line-height: 1.65;
+}
+
+.element__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.element__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.element__info {
+    margin-left: -145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.element__author {
+    color: hsl(217, 19%, 35%);
+}
+
+.element__date {
+    margin-top: 3px;
+    color: hsl(212, 23%, 69%);
+}
+
+.element__share {
+    position: relative;
+    color: hsl(214, 17%, 51%);
+    cursor: pointer;
+    background-color: hsl(213, 44%, 95%);
+    padding: 10px;
+    border-radius: 50%;
+    transition: color .2s linear, background-color .2s linear;
+}
+
+.element__share:hover {
+    color: hsl(213, 44%, 95%);
+    background-color: hsl(214, 17%, 51%);
+}
+
+.element__share.active {
+    background-color: hsl(214, 17%, 51%);
+    color: hsl(213, 44%, 95%); 
+}
+
+.element__share.active::after {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: -4px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background-color: hsl(217, 19%, 35%);
+}
+
+.element__popup {
+    display: none;
+}
+
+.element__popup.active {
+    position: absolute;
+    right: -220px;
+    bottom: 100px;
+    z-index: 5;
+    transform: translateX(-48%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 35px;
+    background-color: hsl(217, 19%, 35%);
+    color:hsl(213, 44%, 95%);
+    border-radius: 12px;
+}
+
+.popup__title {
+    text-transform: uppercase;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    letter-spacing: 8px;
+    font-size: 15px;
+
+}
+
+.popup__icon {
+    margin-left: 20px;
+    font-size: 25px;
+    color:hsl(213, 44%, 95%);
+    transition: color .2s linear;
+}
+
+.popup__icon:hover {
+    color: hsl(212, 23%, 69%);;
+}
+
+@media (max-width: 900px) {
+    .element {
+        max-width: 330px;
+        position: relative;
+    }
+
+    .element__inner {
+        flex-direction: column;
+    }
+
+    .element__img {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .element__content {
+        margin-left: 0;
+        margin-top: -40px;
+        padding: 30px 25px 15px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .element__title {
+        font-size: 17px;
+    }
+
+    .element__text {
+        margin-top: 15px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .element__footer {
+        margin-top: 30px;
+    }
+
+    .element__info {
+        margin-left: 0;
+    }
+
+    .element__share.active::after {
+        display: none;
+    }
+
+    .element__share.active {
+        z-index: 10;
+    }
+
+    .element__popup.active {
+        justify-content: start;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0 0 15px 15px;
+        padding: 25px 35px;
+    }
+
+    .popup__title {
+        font-size: 13px;
+        letter-spacing: 5px;
+    }
+
+    .popup__icon {
+        font-size: 20px;
+        margin-left: 13px;
+    }
+}
